@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Pet Registration</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="login-dark" style="width: 1668px;">
+
+        <form action="https://sheetdb.io/api/v1/fhkl9aq1ga51v" method="POST" id="sheetdb-form" style="height: 570px;width: 347px;margin-left: 138px;opacity: 1;background-color: rgba(30,40,51,0.77);">
+            <h1 class="text-center" style="font-size: 24px;font-family: 'Allerta Stencil', sans-serif;color: rgb(238,203,203);">Pet's Registration</h1>
+            <div class="illustration"><i class="icon ion-pricetag" style="color: rgba(229,195,235,0.95);"></i>
+        </div>
+            <div class="form-group">
+            	<input class="form-control" type="text" name="data[pet]" placeholder="Pet's Name">
+            	<input class="form-control" type="text" name="data[gender]" placeholder="Gender">
+            	<input class="form-control" type="text" name="data[breed]" placeholder="Breed">
+            	<input class="form-control" type="text" name="data[birthday]" placeholder="Birthday">
+            </div>
+            <div class="form-group" style="color: rgb(255,255,255);">
+            	<button role="button" type="submit" style="color: rgb(241,241,241);background-color: rgb(35,75,128);font-family: 'Allerta Stencil', sans-serif;">Submit</button>
+                </div>
+        </form>
+        <img src="assets/img/pt.jpg" style="height: 1004px;width: 1900px;">
+    </div> 
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code Header-Dark
+      window.location.href = "untitled.html";
+    });
+  });
+</script>

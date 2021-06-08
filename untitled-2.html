@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Pet Registration</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="login-dark">
+        <form action="https://sheetdb.io/api/v1/fhkl9aq1ga51v" method="POST" id="sheetdb-form">
+            <h1 class="text-center" style="color: rgb(247,214,214);">Emergency</h1>
+            <div class="illustration">
+                <i class="icon ion-ios-medkit" style="color: rgb(224,193,193);"></i>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="data[fulln]" placeholder="Full Name">
+                <input class="form-control" type="tel" name="data[number]" placeholder="Phone Number">
+            </div>
+            <div class="form-group" style="color: rgb(255,255,255);">
+                <button role="button" type="submit" style="color: rgb(241,241,241);background-color: rgb(35,75,128);font-family: 'Allerta Stencil', sans-serif;">Submit</button>
+                </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code Header-Dark
+      window.location.href = "untitled-3.html";
+    });
+  });
+</script>
